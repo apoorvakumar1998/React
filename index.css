@@ -48,7 +48,6 @@
   border: 1px solid black;
   flex-direction: column;
   border-radius: 8px;
-  align-items: center;
 }
 
 .res-card:hover {
@@ -58,4 +57,8 @@
 
 .res-logo {
   width: 100%;
+}
+
+.filter-btn {
+  cursor: pointer;
 }
