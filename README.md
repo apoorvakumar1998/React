@@ -29,5 +29,19 @@
  - reconcilation
  - virtual DOM
 
+# Hooks
+- useState()
+- useEffect() -> takes 2 arguments -> callback fn and dependency array
+  - if dependeny array is not passed -> then useEffect() will be called for every component render
+  - if dependeny array is passed as [] -> then useEffect() will be called only during initial render (only once )
+  - if dependeny array is passed -> then useEffect() will be called for every change in the dependency
+
+# 2 types of routing -> client(SPA) and server side
+
+# Class based Components
+ - Constructor , render and componentDidMount
+ - Lifecycle - parent Constructor -> parent render -> child Constructor -> child render -> child componentDidMount -> parent componentDidMount
+ - componentDidMount is similar to useEffect() hook
+
 
 
