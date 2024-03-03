@@ -1,11 +1,12 @@
-import React from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from './components/Header';
 import Body from './components/Body';
-import About from './components/About';
+// import About from './components/About';
 import Error from "./components/Error";
 import RestaurentDetails from "./components/RestaurentDetails";
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import UserContext from "./utils/UserContext";
 // const heading = React.createElement(
 //   "div",
 //   {
@@ -56,12 +57,22 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 //   )
 // }
 
+const About = lazy(() => import('./components/About'));
 const AppComponent = () => {
+
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    setUserName('Virat Kohli');
+  }, [])
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ userName: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   )
 }
 
@@ -77,7 +88,7 @@ const appRoutes = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <About />
+        element: <Suspense fallback={<h1>Loading</h1>}><About /></Suspense>
       },
       {
         path: 'restaurent/:resId',
@@ -89,4 +100,5 @@ const appRoutes = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(jsxElement);
-root.render(<RouterProvider router={appRoutes} />);
+root.render(
+  <RouterProvider router={appRoutes} />);

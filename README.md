@@ -43,5 +43,15 @@
  - Lifecycle - parent Constructor -> parent render -> child Constructor -> child render -> child componentDidMount -> parent componentDidMount
  - componentDidMount is similar to useEffect() hook
 
+# Higher order components
 
+# Controlled vs Un-controlled components
 
+# props drilling
+
+# lifting the state up 
+
+# context
+ - createContext
+ - useContext
+ - Provider and Consumer
