@@ -28,6 +28,7 @@
  - react fiber
  - reconcilation
  - virtual DOM
+ - Render and Commit phase
 
 # Hooks
 - useState()
@@ -55,3 +56,8 @@
  - createContext
  - useContext
  - Provider and Consumer
+
+# React-redux and Redux Toolkit
+ - WRITE -> Dispatch an action which calls reducer function which updates slice of redux store
+ - READ -> SELECTOR -> subscribe to the store
+ - useDispatch() and useSelector()  

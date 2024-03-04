@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import { useContext } from 'react';
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const { userName } = useContext(UserContext);
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <div className="flex justify-between items-center sticky top-0 bg-yellow-50 border-black z-[999]">
       <div className="logo-container">
@@ -22,6 +24,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="about">About Us</Link>
+          </li>
+          <li>
+            <Link to="cart">Cart ({cartItems.length})</Link>
           </li>
           <li className='text-xl font-bold'>{userName}</li>
         </ul>
