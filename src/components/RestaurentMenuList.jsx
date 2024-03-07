@@ -13,7 +13,7 @@ const RestaurentMenuList = ({ menu, hideAddButton }) => {
       {menu.map(item => {
         const { name, defaultPrice, price, description, id, imageId } = item.card.info;
         return (
-          <div className="menu-item inline-flex justify-between gap-4 py-3 p-4 border-b-1 border-black" key={id}>
+          <div data-testid="items" className="menu-item inline-flex justify-between gap-4 py-3 p-4 border-b-1 border-black" key={id}>
             <div className="item-desc w-3/4">
               <h3 className='font-semibold font-sans'>{name}</h3>
               <div>₹ {(defaultPrice || price) / 100}</div>

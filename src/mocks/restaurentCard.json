@@ -1,0 +1,81 @@
+{
+  "data": {
+    "info": {
+      "id": "16073",
+      "name": "California Burrito",
+      "cloudinaryImageId": "27238ee4292d42c7b705f2ce8671ff80",
+      "locality": "Malleshwaram",
+      "areaName": "Malleshwaram",
+      "costForTwo": "₹250 for two",
+      "cuisines": [
+        "Mexican",
+        "American",
+        "Salads",
+        "Continental",
+        "Keto",
+        "Healthy Food"
+      ],
+      "avgRating": 4.6,
+      "parentId": "1252",
+      "avgRatingString": "4.6",
+      "totalRatingsString": "10K+",
+      "sla": {
+        "deliveryTime": 37,
+        "lastMileTravel": 5,
+        "serviceability": "SERVICEABLE",
+        "slaString": "35-40 mins",
+        "lastMileTravelString": "5.0 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2024-03-06 23:00:00",
+        "opened": true
+      },
+      "badges": {
+        "textExtendedBadges": [{
+          "iconId": "guiltfree/GF_Logo_android_3x",
+          "shortDescription": "options available",
+          "fontColor": "#7E808C"
+        }]
+      },
+      "isOpen": true,
+      "type": "F",
+      "badgesV2": {
+        "entityBadges": {
+          "imageBased": {},
+          "textBased": {},
+          "textExtendedBadges": {
+            "badgeObject": [{
+              "attributes": {
+                "description": "",
+                "fontColor": "#7E808C",
+                "iconId": "guiltfree/GF_Logo_android_3x",
+                "shortDescription": "options available"
+              }
+            }]
+          }
+        }
+      },
+      "aggregatedDiscountInfoV3": {
+        "header": "20% OFF",
+        "subHeader": "UPTO ₹50"
+      },
+      "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+          "lottie": {},
+          "video": {}
+        }
+      },
+      "reviewsSummary": {},
+      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+      "link": "https://www.swiggy.com/restaurants/california-burrito-malleshwaram-bangalore-16073",
+      "type": "WEBLINK"
+    }
+  }
+}

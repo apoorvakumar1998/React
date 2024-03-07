@@ -60,4 +60,16 @@
 # React-redux and Redux Toolkit
  - WRITE -> Dispatch an action which calls reducer function which updates slice of redux store
  - READ -> SELECTOR -> subscribe to the store
- - useDispatch() and useSelector()  
+ - useDispatch() and useSelector()
+
+ # Setting up testing 
+  - Install react testing library
+  - install jest
+  - install babel dependencies
+  - configure babel
+  - configure parcel to disable default babel transpilation
+  - initialize jest -> npx jest --init
+  - install jsdom  
+  - install @babel/preset-react
+  - add @babel/preset-react in babel config
+  - install @testing-library/jest-dom

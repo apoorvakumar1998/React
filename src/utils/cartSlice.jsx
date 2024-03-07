@@ -8,7 +8,7 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       // Used Immer library behind the scenes to do immutable object
-      state.items.push(action.payload)
+      state.items.push(action.payload);
     },
     removeItem: (state, action) => {
       state.items.pop();

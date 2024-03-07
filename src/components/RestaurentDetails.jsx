@@ -8,7 +8,8 @@ const RestaurentDetails = () => {
 
   let [showItems, setShowItems] = useState(null);
   const { resId } = useParams();
-  resData = useRestaurentMenu(resId);
+  const resData = useRestaurentMenu(resId);
+  console.log('---resData', resData);
 
   if (resData === null) return <h1>No Data Found</h1>
   const { name, cuisines, avgRating, costForTwoMessage, sla } = resData.data.cards[0].card.card.info;
@@ -18,7 +19,6 @@ const RestaurentDetails = () => {
     menu = resData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
   }
   const itemCategory = resData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c.card.card['@type'] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory');
-  console.log(itemCategory);
   return (
     <div className="res-details flex items-center justify-center flex-col mt-16 mx-72">
       <div className="res-header flex items-center justify-between p-4 rounded-lg border border-solid border-black w-full">
