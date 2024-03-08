@@ -1,4 +1,4 @@
-ShimmerCard = () => {
+const Shimmer = () => {
   return (
     <div>
       <section className="text-gray-700 body-font mx-50 my-auto">
@@ -141,4 +141,4 @@ ShimmerCard = () => {
 }
 
 
-export default ShimmerCard;
+export default Shimmer;
