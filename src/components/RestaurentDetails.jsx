@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import useRestaurentMenu from "../utils/useRestaurentMenu";
 import RestaurentCategory from './RestaurentCategory';
 import { useState } from 'react';
+import ShimmerCard from './Shimmer';
 
 const RestaurentDetails = () => {
 
@@ -11,7 +12,7 @@ const RestaurentDetails = () => {
   const resData = useRestaurentMenu(resId);
   console.log('---resData', resData);
 
-  if (resData === null) return <h1>No Data Found</h1>
+  if (resData === null) return <ShimmerCard />
   const { name, cuisines, avgRating, costForTwoMessage, sla } = resData.data.cards[0].card.card.info;
   // TODO:Change API to stable one
   let menu = (resData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[1]?.itemCards);

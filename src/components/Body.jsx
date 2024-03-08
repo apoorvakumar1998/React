@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
+import ShimmerCard from './Shimmer';
 
 const Body = () => {
   const [restaurentList, setrestaurentList] = useState([]);
@@ -24,9 +25,7 @@ const Body = () => {
   if (!onlineStatus) return <h1>Looks like you are Offline!!!!!!</h1>
 
   if (!restaurentList.length) {
-    // Add shimmer component here
-    // conditional rendering
-    return <div>Loading.....</div>;
+    return <ShimmerCard />;
   }
   return (
     <div className="body-container p-6">
