@@ -4,7 +4,6 @@ import UserContext from '../utils/UserContext';
 class UserClass extends React.Component {
 
   constructor(props) {
-    console.log('constructor');
     super(props);
     this.state = {
       count: 0
@@ -12,7 +11,6 @@ class UserClass extends React.Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
     // all APIS are called here
   }
 
@@ -25,7 +23,6 @@ class UserClass extends React.Component {
   }
 
   render() {
-    console.log('render');
     return (
       <div className="user-card">
         <h2>Name:{this.props.name}</h2>

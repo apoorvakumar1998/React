@@ -10,7 +10,6 @@ const RestaurentDetails = () => {
   let [showItems, setShowItems] = useState(null);
   const { resId } = useParams();
   const resData = useRestaurentMenu(resId);
-  console.log('---resData', resData);
 
   if (resData === null) return <ShimmerCard />
   const { name, cuisines, avgRating, costForTwoMessage, sla } = resData.data.cards[0].card.card.info;

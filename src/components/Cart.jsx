@@ -19,7 +19,7 @@ const Cart = () => {
         {cartItems.length > 0 && <button className='m-2 p-2 text-white bg-black rounded-lg' onClick={clearCartItem}>Clear Cart</button>}
       </div>
       {!cartItems.length ?
-        <ShimmerCard /> :
+        <div className='text-center font-bold text-2xl'>No Items in Cart</div> :
         <RestaurentMenuList menu={cartItems} hideAddButton={true} />
       }
     </div>

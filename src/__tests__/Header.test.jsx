@@ -18,7 +18,6 @@ it('should render header component and should have cart text', () => {
   // const cart = screen.getByText('Cart (0)');
   const cart = screen.getByText(/Cart/);
   // const cart = screen.getByText(/cart/i); // Using 'i' flag to perform a case-insensitive match
-  console.log(cart);
   expect(cart).toBeInTheDocument();
 })
 

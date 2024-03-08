@@ -15,7 +15,6 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       // normal console prints proxy object,so use current(state)
-      console.log(current(state));
       // mutate the existing state or return new state
       state.items.length = 0; // return {items:[]}
     }
