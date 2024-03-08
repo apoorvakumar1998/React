@@ -66,7 +66,7 @@ const AppComponent = () => {
   const [userName, setUserName] = useState();
 
   useEffect(() => {
-    setUserName('Virat Kohli');
+    setUserName('Apoorva Kumar');
   }, [])
 
   return (
