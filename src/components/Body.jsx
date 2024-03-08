@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
 import ShimmerCard from './Shimmer';
+import { RESTAURENT_LIST_API } from '../utils/constants';
 
 const Body = () => {
   const [restaurentList, setrestaurentList] = useState([]);
@@ -12,7 +13,7 @@ const Body = () => {
   const { userName, setUserName } = useContext(UserContext);
   useEffect(() => {
     (async () => {
-      const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+      const data = await fetch(RESTAURENT_LIST_API);
       const json = await data.json();
       const swiggy_data = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
       setrestaurentList(swiggy_data);
