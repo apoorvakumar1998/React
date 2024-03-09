@@ -13,9 +13,10 @@ const Header = () => {
     return curr.quantity + acc
   }, 0)
   return (
-    <div className="flex justify-between items-center sticky top-0 bg-yellow-50 border-black z-[999]">
-      <div className="logo-container">
-        <img src={LOGO_URL} alt="Logo" className="w-28" />
+    <div className="flex justify-between items-center sticky top-0 bg-yellow-100 border-yellow-400 z-[999] border-b-2">
+      <div className="logo-container flex items-center">
+        <img src={LOGO_URL} alt="Logo" className="w-16" />
+        <div className='font-bold text-xl ml-4 font-mono hover:italic text-yellow-400'>Eat-Easy</div>
       </div>
       <div className="nav-items">
         <ul className='flex items-center justify-center gap-8 pr-20 cursor-pointer'>
