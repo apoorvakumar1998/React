@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -7,20 +7,36 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      // Used Immer library behind the scenes to do immutable object
-      state.items.push(action.payload);
+      const item = {
+        quantity: 1,
+        id: action.payload.card.info.id,
+        ...action.payload
+      }
+      state.items.push(item);
     },
+    updateItemQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const itemIndex = state.items.findIndex(item => item.id === id);
+      if (itemIndex !== -1) {
+        if (quantity === 0) {
+          // Remove the item if the new quantity is 0
+          state.items.splice(itemIndex, 1);
+        } else {
+          // Update the quantity if it's not 0
+          state.items[itemIndex].quantity = quantity;
+        }
+      }
+    }
+    ,
     removeItem: (state, action) => {
-      state.items.pop();
+      state.items = state.items.filter(item => item.id !== action.payload);
     },
     clearCart: (state) => {
-      // normal console prints proxy object,so use current(state)
-      // mutate the existing state or return new state
-      state.items.length = 0; // return {items:[]}
+      state.items.length = 0;
     }
   }
-})
+});
 
-export const { addItem, removeItem, clearCart } = cartSlice.actions;
+export const { addItem, updateItemQuantity, removeItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
