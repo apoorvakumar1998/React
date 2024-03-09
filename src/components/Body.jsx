@@ -5,6 +5,7 @@ import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
 import ShimmerCard from './Shimmer';
 import { RESTAURENT_LIST_API } from '../utils/constants';
+import { OFFLINE_IMAGE_URL } from '../utils/constants';
 
 const Body = () => {
   const [restaurentList, setrestaurentList] = useState([]);
@@ -23,7 +24,7 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
   const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
 
-  if (!onlineStatus) return <h1>Looks like you are Offline!!!!!!</h1>
+  if (!onlineStatus) return <img className='mt-20 mx-auto' src={OFFLINE_IMAGE_URL} />
 
   if (!restaurentList.length) {
     return <ShimmerCard />;
