@@ -8,7 +8,7 @@ const RestaurentCategory = ({ data, showItems, setshowItems }) => {
         setshowItems();
       }}>
         <span className="font-bold text-lg">{data.title} ({data.itemCards.length})</span>
-        <span>{showItems ? '⬆️' : '⬇️'}</span>
+        <span>{showItems ? '⬆' : '⬇'}</span>
       </div>
       <div>{
         showItems ?

@@ -10,6 +10,7 @@ import UserContext from "./utils/UserContext";
 import { Provider } from 'react-redux';
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Shimmer from './components/Shimmer';
 // const heading = React.createElement(
 //   "div",
 //   {
@@ -93,7 +94,7 @@ const appRoutes = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <Suspense fallback={<h1>Loading</h1>}><About /></Suspense>
+        element: <Suspense fallback={<Shimmer />}><About /></Suspense>
       },
       {
         path: 'restaurent/:resId',

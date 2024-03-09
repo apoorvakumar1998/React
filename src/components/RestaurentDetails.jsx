@@ -8,11 +8,13 @@ import ShimmerCard from './Shimmer';
 const RestaurentDetails = () => {
 
   let [showItems, setShowItems] = useState(null);
+  // get resId from route params
   const { resId } = useParams();
+  // custom hook to get restaurent data from API
   const resData = useRestaurentMenu(resId);
 
-  if (resData === null) return <ShimmerCard />
-  const { name, cuisines, avgRating, costForTwoMessage, sla } = resData.data.cards[0].card.card.info;
+  if (resData === null) return <ShimmerCard />;
+  const { name, cuisines, avgRating, costForTwoMessage } = resData.data.cards[0].card.card.info;
   // TODO:Change API to stable one
   let menu = (resData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[1]?.itemCards);
   if (menu === undefined) {
@@ -27,7 +29,7 @@ const RestaurentDetails = () => {
           <p className='text-sm'>{cuisines.join(', ')}</p>
         </div>
         <div className="res-stars text-center p-2 rounded-lg border border-solid border-black">
-          <p>{avgRating} stars</p>
+          <p>{avgRating} ⭐</p>
           <p>{costForTwoMessage}</p>
         </div>
       </div>
@@ -37,7 +39,7 @@ const RestaurentDetails = () => {
             key={item?.card?.card.title}
             data={item?.card?.card}
             showItems={index === showItems}
-            setshowItems={() => setShowItems(index)}
+            setshowItems={() => setShowItems(showItems === index ? null : index)}
           />)
       }
     </div>

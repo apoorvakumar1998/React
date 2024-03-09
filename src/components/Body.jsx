@@ -12,6 +12,7 @@ const Body = () => {
   const [dummyList, setDummyList] = useState([]);
   const [searchText, setSearchText] = useState('');
   const { userName, setUserName } = useContext(UserContext);
+
   useEffect(() => {
     (async () => {
       const data = await fetch(RESTAURENT_LIST_API);
@@ -21,6 +22,7 @@ const Body = () => {
       setDummyList(swiggy_data);
     })()
   }, []);
+
   const onlineStatus = useOnlineStatus();
   const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
 
